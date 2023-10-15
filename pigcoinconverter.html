@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pigcoin Converter</title>
+	<script>
+		function convert() {
+			// Get the input value and currency type
+			let amount = parseFloat(document.getElementById("amount").value);
+			let currency = document.getElementById("currency").value;
+
+			// Convert the amount to PigCoin
+			let pigcoin;
+			if (currency === "USD") {
+				pigcoin = amount / 1.9;
+			} else if (currency === "EU") {
+				pigcoin = (amount / 1.9) * 0.95;
+			}
+
+			// Display the converted value
+			document.getElementById("pigcoin").value = pigcoin.toFixed(2);
+		}
+	</script>
+</head>
+<body>
+	<h1>Pigcoin Converter</h1>
+	<form>
+		<label for="amount">Amount:</label>
+		<input type="number" id="amount" name="amount"><br>
+
+		<label for="currency">Currency:</label>
+		<select id="currency" name="currency">
+			<option value="USD">USD</option>
+			<option value="EU">EU</option>
+		</select><br>
+
+		<label for="pigcoin">PigCoin:</label>
+		<input type="text" id="pigcoin" name="pigcoin" readonly><br>
+
+		<button type="button" onclick="convert()">Convert</button>
+	</form>
+</body>
+</html>
