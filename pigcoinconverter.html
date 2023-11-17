@@ -11,9 +11,9 @@
 			// Convert the amount to PigCoin
 			let pigcoin;
 			if (currency === "USD") {
-				pigcoin = amount / 1.9;
+				pigcoin = (amount / 2.0) / 0.93;
 			} else if (currency === "EU") {
-				pigcoin = (amount / 2.0) * 0.93;
+				pigcoin = (amount / 2.0);
 			}
 
 			// Display the converted value
